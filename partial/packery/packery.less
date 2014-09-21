@@ -1,43 +1,174 @@
-.xwide {
-  width:calc(100%/4*4) !important;
-  height:540px;
-}
-
-.wide {
-  width:calc(100%/4*2) !important;
-  height:360px;
-}
-.normal {
-  width:calc(100%/4);
-  height:180px;
-}
-.xwide div {
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+.module-container {
   width: 100%;
-  min-width: 800px;
-  background: red;
-  height: 536px;
-}
-.wide div {
-  width: 100%;
-  min-width: 600px;
-  background: #7c7c7c;
-  height: 356px;
-}
-.normal div {
-  min-width: 200px;
-  width: 100%;
-  background: #cccccc;
-  height: 176px;
+
+  .gutter-sizer {
+    width: 2%;
+    display: none;
+  }
+
+  /* clearfix */
+  .module-container:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  .module, .module-sizer {
+    height: 200px;
+    width: 100%;
+    /*border: 2px solid #fff;*/
+    padding: 2px;
+  }
+
+  .module {
+    float: left;
+    &.wide {
+      width: 100%;
+      height: 400px;
+    }
+    &.full {
+      width: 100%;
+      height: 600px;
+    }
+    & div.module-box {
+      transition: background-color 0.5s ease;
+      background-color: #cccccc;
+      width: 100%;
+      height: 100%;
+    }
+    & div.module-box:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    &.is-dragging {
+      z-index: 2;
+    }
+  }
 }
 
-.item {
-  padding: 2px;
-  /*transition: transform 0.1s ease;*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .module-container {
+    width: 100%;
+
+    .gutter-sizer {
+      width: 2%;
+      display: none;
+    }
+
+    /* clearfix */
+    .module-container:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+
+    .module, .module-sizer {
+      height: 200px;
+      width: 50%;
+      /*border: 2px solid #fff;*/
+      padding: 2px;
+    }
+
+    .module {
+      float: left;
+      &.wide {
+        width: 100%;
+        height: 400px;
+      }
+      &.full {
+        width: 100%;
+        height: 600px;
+      }
+      & div.module-box {
+        transition: background-color 0.5s ease;
+        background-color: #cccccc;
+        width: 100%;
+        height: 100%;
+      }
+      & div.module-box:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+      &.is-dragging {
+        z-index: 2;
+      }
+    }
+  }
+
 }
 
-.item div {
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .module-container {
+    width: 100%;
+
+    .gutter-sizer {
+      width: 2%;
+      display: none;
+    }
+
+    /* clearfix */
+    .module-container:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+
+    .module, .module-sizer {
+      height: 200px;
+      width: 25%;
+      /*border: 2px solid #fff;*/
+      padding: 2px;
+    }
+
+    .module {
+      float: left;
+      &.wide {
+        width: 50%;
+        height: 400px;
+      }
+      &.full {
+        width: 100%;
+        height: 600px;
+      }
+      & div.module-box {
+        transition: background-color 0.5s ease;
+        background-color: #cccccc;
+        width: 100%;
+        height: 100%;
+      }
+      & div.module-box:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+      &.is-dragging {
+        z-index: 2;
+      }
+    }
+  }
+
 }
 
-/*.grid-sizer { width: 20%; }*/
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
+
+.tool-bar-box {
+  opacity: 0;
+  color: #7c7c7c;
+  transition: opacity 0.5s ease-in;
+  text-align: right;
+  padding: 4px;
+}
+
+div.module-box:hover .tool-bar-box {
+  opacity: 1;
+  text-align: right;
+}
+
+
+
