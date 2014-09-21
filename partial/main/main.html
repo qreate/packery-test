@@ -1,0 +1,19 @@
+<div class="col-md-12" ng-controller="MainCtrl" id="container">
+    <div class="wall_container" masonry-wall-dir=".item" masonry-wall-options="{
+            gutter: 0,
+            transitionDuration: '0.3s',
+            columnWidth: container.querySelector('.grid-sizer')
+        }"
+            >
+        <div class="item grid-sizer" ng-repeat="item in bricks" custom-directive masonry-item-dir  ng-click="resize($index, item.size)" ng-class="item.size">
+            <div>{{item.title}}
+                <button ng-click="remove(item)">Remove</button></div>
+        </div>
+    </div>
+    <!--<div masonry>
+        <div class="masonry-brick" ng-repeat="brick in bricks">
+            <img ng-src="{{ brick.src }}" alt="{{brick.title}}" ng-click="alert(brick.title)">
+        </div>
+    </div>-->
+
+</div>
