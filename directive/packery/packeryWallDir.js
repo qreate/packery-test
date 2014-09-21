@@ -34,10 +34,6 @@ angular.module('untitled').directive('packeryWallDir', function() {
                 this.packery.bindResize();
                 //this.packery.fit(element, x, y);
 
-                var draggable1 = new Draggabilly(element[0]);
-                this.packery.bindDraggabillyEvents(draggable1);
-
-
 
                 $scope.alert = function(id){
                     //alert("hej")
