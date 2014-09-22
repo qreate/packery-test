@@ -1,4 +1,4 @@
-describe('MainCtrl', function() {
+describe('PackeryCtrl', function() {
 
 	beforeEach(module('untitled'));
 
@@ -6,7 +6,7 @@ describe('MainCtrl', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('MainCtrl', {$scope: scope});
+      ctrl = $controller('PackeryCtrl', {$scope: scope});
     }));	
 
 	it('should ...', inject(function() {

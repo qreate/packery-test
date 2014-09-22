@@ -1,19 +1,16 @@
 <div class="col-md-12" ng-controller="MainCtrl" id="container">
-    <div class="wall_container" masonry-wall-dir=".item" masonry-wall-options="{
-            gutter: 0,
-            transitionDuration: '0.3s',
-            columnWidth: container.querySelector('.grid-sizer')
-        }"
-            >
-        <div class="item grid-sizer" ng-repeat="item in bricks" custom-directive masonry-item-dir  ng-click="resize($index, item.size)" ng-class="item.size">
-            <div>{{item.title}}
-                <button ng-click="remove(item)">Remove</button></div>
+    <div class="module-container">
+        <div class="module-sizer"></div>
+        <div class="gutter-sizer"></div>
+        <div ng-repeat="item in windowItems" class="module col-md-3" packery-patch-work ng-class="item.size">
+            <div class="module-box">
+                <div class="tool-bar-box">
+                    <i class="fa fa-expand" ng-show="item.size == 'normal'" ng-click="resize($index)" title="Expand"></i>
+                    <i class="fa fa-compress" ng-show="item.size == 'full'" ng-click="resize($index)" title="Minimize"></i>
+                    <i class="fa fa-arrows-alt" ng-show="item.size == 'wide'" ng-click="resize($index)" title="Expand"></i>
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
         </div>
     </div>
-    <!--<div masonry>
-        <div class="masonry-brick" ng-repeat="brick in bricks">
-            <img ng-src="{{ brick.src }}" alt="{{brick.title}}" ng-click="alert(brick.title)">
-        </div>
-    </div>-->
-
 </div>

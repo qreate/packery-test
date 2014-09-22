@@ -1,4 +1,4 @@
-angular.module('untitled').directive('packeryWallDir', ['$rootScope', '$timeout',
+angular.module('untitled').directive('packeryPatchWork', ['$rootScope', '$timeout',
     function($rootScope, $timeout) {
         return {
             restrict: 'A',

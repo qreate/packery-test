@@ -3,12 +3,8 @@ angular.module('untitled', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 angular.module('untitled').config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('main', {
-        url: '/main',
+        url: '/',
         templateUrl: 'partial/main/main.html'
-    });
-    $stateProvider.state('packery', {
-        url: '/packery',
-        templateUrl: 'partial/packery/packery.html'
     });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
