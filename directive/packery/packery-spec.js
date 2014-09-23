@@ -1,4 +1,4 @@
-describe('packery', function() {
+describe('packery-patch-work', function() {
 
   beforeEach(module('untitled'));
 

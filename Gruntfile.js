@@ -191,12 +191,29 @@ module.exports = function (grunt) {
       during_watch: {
         browsers: ['PhantomJS']
       },
-    }
+    },protractor: {
+          options: {
+              configFile: "node_modules/protractor/referenceConf.js", // Default config file
+              keepAlive: true, // If false, the grunt process stops when the test fails.
+              noColor: false, // If true, protractor will not use colors in its output.
+              args: {
+                  // Arguments passed to the command
+              }
+          },
+          your_target: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+              options: {
+                  configFile: "e2e-tests/protractor.conf.js", // Target-specific config file
+                  args: {} // Target-specific arguments
+              }
+          },
+      },
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
+
+  grunt.loadNpmTasks('grunt-protractor-runner');
 
   grunt.event.on('watch', function(action, filepath) {
     //https://github.com/gruntjs/grunt-contrib-watch/issues/156
